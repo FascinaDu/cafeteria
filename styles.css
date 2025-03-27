@@ -104,7 +104,7 @@ section {
     line-height: 1.8;
 }
 
-.caixa-principal div a {
+.botao-link {
     background-color: var(--main-color);
     cursor: pointer;
     margin-top: 2rem;
@@ -118,4 +118,76 @@ section {
 
 .caixa-principal div a:hover {
     letter-spacing: 0.1rem;
+}
+
+.titulo {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.titulo span {
+    color: var(--main-color);
+}
+
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem {
+    flex: 1 1 45rem;
+
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img {
+    width: 100%;
+}
+
+.caixa-sobre .sobre-container .sobre-texto {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 3.2rem;
+    color: #fff;
+
+}
+
+.caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.7rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8rem;
+    padding: 1rem 0;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 20px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mascara-modal {
+    visibility: hidden; 
+    transition: visibility 1s linear;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 20%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+
 }
