@@ -175,14 +175,14 @@ section {
     gap: 20px;
     z-index: 4;
     position: fixed;
-    top: 50%;
+    top: -40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: top 0.5s linear;
 }
 
 .mascara-modal {
     visibility: hidden; 
-    transition: visibility 1s linear;
     z-index: 3;
     position: fixed;
     inset: 0;
