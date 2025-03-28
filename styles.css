@@ -12,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Merriweather', serif;
 }
 
 .caixa-video {
@@ -164,7 +164,7 @@ section {
     font-size: 1.7rem;
     font-weight: lighter;
     color: #fff;
-    line-height: 1.8rem;
+    line-height: 1.7rem;
     padding: 1rem 0;
 }
 
