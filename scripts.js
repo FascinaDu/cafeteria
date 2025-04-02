@@ -1,11 +1,3 @@
-/* 
-
-        [] Saber quando o usuario clicou
-        [] Mudar posicionamento do modal
-        []
-
-*/
-
 const modal = document.querySelector(".modal")
 const mascara = document.querySelector('.mascara-modal')
 
