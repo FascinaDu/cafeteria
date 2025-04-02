@@ -1,5 +1,4 @@
-# 🟨 JavaScript
-
+# ☕ Site Cafeteria
 > Site de uma cafeteria passo a passo pelo canal **DevClub | Programação**
 
 ## 📖 Índice
