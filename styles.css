@@ -1,10 +1,11 @@
-
 :root {
     font-size: 10px;
     --main-color: #d3ad7f;
     --black: #131313;
     --bg: #010103;
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -13,6 +14,10 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Merriweather', serif;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .caixa-video {
@@ -27,6 +32,7 @@
     min-width: 100%;
     position: fixed;
     top: 0;
+    object-fit: cover;
 }
 
 .mascara {
@@ -35,10 +41,11 @@
     position: fixed;
     top: 0;
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);   
+    backdrop-filter: blur(3px);
 }
 
 section {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -48,9 +55,16 @@ section {
     top: 0;
     left: 0;
     z-index: 2;
-    background-color: var(--bg);
+    background-color: rgba(1, 1, 3, 0.9);
     border-bottom: var(--border);
     width: 100vw;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.header.scrolled {
+    padding: 0.5rem 0;
+    background-color: rgba(1, 1, 3, 0.95);
 }
 
 .header section {
@@ -64,20 +78,39 @@ section {
 
 .header section a img {
     height: 6rem;
+    transition: var(--transition);
+}
 
+.header section nav {
+    display: flex;
+    gap: 1rem;
 }
 
 .header section nav a {
     margin: 0 1rem;
     font-size: 1.8rem;
     color: #fff;
-    transition: 0.2s linear ;
+    transition: var(--transition);
+    position: relative;
 }
 
 .header section nav a:hover {
     color: var(--main-color);
-    border-bottom: 0.1rem solid var(--main-color);
-    padding-bottom: 0.5rem;
+}
+
+.header section nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 0;
+    height: 0.1rem;
+    background-color: var(--main-color);
+    transition: var(--transition);
+}
+
+.header section nav a:hover::after {
+    width: 100%;
 }
 
 .caixa-principal {
@@ -88,12 +121,26 @@ section {
 
 .caixa-principal div {
     max-width: 60rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .caixa-principal div h3 {
     color: white;
     font-size: 6rem;
     text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 2rem;
 }
 
 .caixa-principal div p {
@@ -113,11 +160,15 @@ section {
     color: #fff;
     padding: 1rem 3rem;
     border: none;
-    transition: 0.3s linear;
+    transition: var(--transition);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
 }
 
 .caixa-principal div a:hover {
     letter-spacing: 0.1rem;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .titulo {
@@ -126,6 +177,18 @@ section {
     text-transform: uppercase;
     padding-bottom: 3.5rem;
     font-size: 4rem;
+    position: relative;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 0.3rem;
+    background-color: var(--main-color);
 }
 
 .titulo span {
@@ -136,51 +199,68 @@ section {
     display: flex;
     align-items: center;
     background-color: var(--black);
-    gap: 1.5rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .caixa-sobre .sobre-container .sobre-imagem {
     flex: 1 1 45rem;
-
+    overflow: hidden;
 }
 
 .caixa-sobre .sobre-container .sobre-imagem img {
     width: 100%;
+    transition: var(--transition);
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img:hover {
+    transform: scale(1.05);
 }
 
 .caixa-sobre .sobre-container .sobre-texto {
     flex: 1 1 45rem;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .caixa-sobre .sobre-container .sobre-texto h3 {
     font-size: 3.2rem;
     color: #fff;
-
+    margin-bottom: 1.5rem;
 }
 
 .caixa-sobre .sobre-container .sobre-texto p {
     font-size: 1.7rem;
     font-weight: lighter;
     color: #fff;
-    line-height: 1.7rem;
+    line-height: 1.9rem;
     padding: 1rem 0;
 }
 
 .modal {
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: var(--black);
     gap: 20px;
     z-index: 4;
     position: fixed;
     top: -50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: top 0.8s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    transition: top 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-in-out, visibility 0.4s;
     opacity: 0; 
-    visibility: hidden; 
+    visibility: hidden;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mascara-modal {
@@ -195,6 +275,48 @@ section {
     visibility: hidden;
 }
 
+.mascara-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .caixa-principal div h3 {
+        font-size: 4.5rem;
+    }
+    
+    .titulo {
+        font-size: 3.5rem;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto h3 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .caixa-principal div h3 {
+        font-size: 3.5rem;
+    }
+    
+    .caixa-principal div p,
+    .caixa-sobre .sobre-container .sobre-texto p {
+        font-size: 1.5rem;
+    }
+    
+    .header section {
+        padding: 1rem 0;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .header section a img {
+        height: 5rem;
+    }
 }
