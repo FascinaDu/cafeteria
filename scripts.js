@@ -2,18 +2,28 @@ const modal = document.querySelector(".modal")
 const mascara = document.querySelector('.mascara-modal')
 
 function mostrarModal() {
-    modal.style.top = '50%';
-    modal.style.opacity = '1';
-    modal.style.visibility = 'visible'; 
-    mascara.style.opacity = '1';
-    mascara.style.visibility = 'visible';
+    modal.classList.add('active');
+    mascara.classList.add('active');
 }
 
 function esconderModal() {
-    modal.style.top = '-40%';
-    modal.style.opacity = '0';
-    modal.style.visibility = 'hidden'; 
-    mascara.style.opacity = '0';
-    mascara.style.visibility = 'hidden';
+    modal.classList.remove('active');
+    mascara.classList.remove('active');
 }
 
+// Add header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const botaoCafe = document.querySelector('.caixa-principal .botao-link');
+    botaoCafe.addEventListener('click', function() {
+        document.querySelector('#sobre').scrollIntoView({ behavior: 'smooth' });
+    });
+});

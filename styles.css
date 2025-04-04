@@ -322,3 +322,128 @@ html {
         height: 5rem;
     }
 }
+
+.rodape {
+    background-color: var(--black);
+    border-top: var(--border);
+    padding: 2rem 0;
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.rodape-logo {
+    flex: 1 1 30rem;
+}
+
+.rodape-logo img {
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.rodape-logo p {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.rodape-contato, .rodape-horario {
+    flex: 1 1 20rem;
+}
+
+.rodape h4 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.rodape p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.rodape-copyright {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: var(--border);
+    text-align: center;
+}
+
+.rodape-copyright p {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+.botao-fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.botao-fechar:hover {
+    background-color: #fff;
+    color: var(--main-color);
+    transform: rotate(90deg);
+}
+
+.modal {
+    width: 80%;
+    max-width: 800px;
+}
+
+.botao-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.botao-link:hover::before {
+    left: 100%;
+}
+
+.caixa-principal div .h3 {
+    color: white;
+    font-size: 6rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .caixa-principal div .h3 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .caixa-principal div .h3 {
+        font-size: 3.5rem;
+    }
+}

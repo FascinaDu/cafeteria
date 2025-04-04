@@ -3,63 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fascina Café</title>
+    <meta name="description" content="Fascina Café - O melhor café para programadores e entusiastas do café de qualidade">
+    <meta name="keywords" content="café, programação, café especial, torra artesanal">
+    <title>Fascina Café | Programando com o melhor café</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/img/ico-logo2.png">
 </head>
 <body>
     <div class="caixa-video">
-        <video src="./videos/video_cafe.mp4" loop muted autoplay></video>
+        <video src="./videos/video_cafe.mp4" loop muted autoplay playsinline aria-hidden="true"></video>
         <div class="mascara"></div>
     </div>
 
     <header class="header">
         <section>
-            <a href="#">
-                <img src="./img/logo.png" alt="logo-cafe">
+            <a href="#" aria-label="Fascina Café - Página Inicial">
+                <img src="./img/logo.png" alt="Logo Fascina Café">
             </a>
 
-            <nav>
+            <nav aria-label="Navegação principal">
                 <a href="#home">Home</a>
                 <a href="#sobre">Sobre</a>
-                <a href="#" onclick="mostrarModal()">Endereço</a>
+                <a href="#" onclick="mostrarModal()" aria-label="Ver nosso endereço">Endereço</a>
             </nav>
-
         </section>
     </header>
 
-
-    <section id="home" class="caixa-principal">
+    <main>
+        <section id="home" class="caixa-principal">
             <div>
-                <h3>Programe com o melhor café da região</h3>
+                <h1 class="h3">Programe com o melhor café da região</h1>
                 <p>O sabor e o aconchego que transformam seu momento do café em uma experiência única.</p>
-                <a class="botao-link">Garanta seu café!</a>
+                <a href="#sobre" class="botao-link">Garanta seu café!</a>
             </div>
-    </section>
+        </section>
 
-
-    <section id="sobre" class="caixa-sobre">
-        <h2 class="titulo"><span>Sobre</span> nós</h2>
-        <div class="sobre-container">
-            <div class="sobre-imagem">
-                <img src="./img/about-img.jpg">
+        <section id="sobre" class="caixa-sobre">
+            <h2 class="titulo"><span>Sobre</span> nós</h2>
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="./img/about-img.jpg" alt="Grãos de café de qualidade premium">
+                </div>
+                
+                <div class="sobre-texto">
+                    <h3>O que faz nosso café especial?</h3>
+                    <p>Nosso café é especial porque usamos grãos selecionados, torra artesanal e preparo cuidadoso. Cada xícara é feita com paixão, garantindo um sabor equilibrado e um aroma irresistível.</p>
+                    <p>Ele se destaca pela qualidade dos grãos, torra no ponto certo e um preparo feito com carinho, resultando em um sabor único e marcante.</p>
+                    <a href="#" class="botao-link" onclick="mostrarModal()">Saiba mais!</a>
+                </div>
             </div>
-            
-            <div class="sobre-texto">
-                <h3>O que faz nosso café especial?</h3>
-                <p>Nosso café é especial porque usamos grãos selecionados, torra artesanal e preparo cuidadoso. Cada xícara é feita com paixão, garantindo um sabor equilibrado e um aroma irresistível.</p>
-                <p>Ele se destaca pela qualidade dos grãos, torra no ponto certo e um preparo feito com carinho, resultando em um sabor único e marcante.</p>
-                <a class="botao-link">Saiba mais!</a>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <section>
+            <div class="rodape-conteudo">
+                <div class="rodape-logo">
+                    <img src="./img/logo.png" alt="Logo Fascina Café" class="logo-footer">
+                    <p>Transformando momentos em experiências.</p>
+                </div>
+                <div class="rodape-contato">
+                    <h4>Contato</h4>
+                    <p>contato@fascinacafe.com.br</p>
+                    <p>+55 (11) 9999-8888</p>
+                </div>
+                <div class="rodape-horario">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda - Sexta: 8h às 20h</p>
+                    <p>Sábado - Domingo: 9h às 18h</p>
+                </div>
             </div>
+            <div class="rodape-copyright">
+                <p>&copy; 2025 Fascina Café. Todos os direitos reservados.</p>
+            </div>
+        </section>
+    </footer>
 
-        </div>
-    </section>
-
-    <div class="modal">
-        <h3 class="titulo"><span>Nosso</span> Endereço</h3>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5295.617955546487!2d-73.99142407825485!3d40.71792997388072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2595101950529%3A0x77df00bef9a87616!2sSweet%20Dreams%20Caf%C3%A9!5e1!3m2!1spt-BR!2sbr!4v1743104926525!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="modal" role="dialog" aria-labelledby="modal-titulo">
+        <h3 id="modal-titulo" class="titulo"><span>Nosso</span> Endereço</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5295.617955546487!2d-73.99142407825485!3d40.71792997388072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2595101950529%3A0x77df00bef9a87616!2sSweet%20Dreams%20Caf%C3%A9!5e1!3m2!1spt-BR!2sbr!4v1743104926525!5m2!1spt-BR!2sbr" 
+            width="100%" height="450" style="border:0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Localização do Fascina Café"></iframe>
+        <button class="botao-fechar" onclick="esconderModal()" aria-label="Fechar modal">×</button>
     </div>
 
     <div class="mascara-modal" onclick="esconderModal()"></div>
