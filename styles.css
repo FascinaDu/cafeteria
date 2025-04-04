@@ -165,8 +165,6 @@ section {
     box-shadow: var(--shadow);
 }
 
-
-
 .botao-link:hover {
     letter-spacing: 0.1rem;
     transform: translateY(-3px);
@@ -287,7 +285,6 @@ html {
     scroll-padding-top: 9rem;
 }
 
-/* Responsive styling */
 @media (max-width: 768px) {
     .caixa-principal div h3 {
         font-size: 4.5rem;

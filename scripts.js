@@ -11,7 +11,6 @@ function esconderModal() {
     mascara.classList.remove('active');
 }
 
-// Add header scroll effect
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
